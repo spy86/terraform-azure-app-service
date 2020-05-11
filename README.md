@@ -34,3 +34,13 @@
 |------|-------------|
 | app\_service\_default\_hostname | Default URL |
 | app\_service\_name | APp service name |
+
+### Terraform plan
+```
+terraform apply -var-file="env/dev.tfvars"
+```
+### Terraform apply
+```
+terraform plan -var-file="env/dev.tfvars"
+```
+
