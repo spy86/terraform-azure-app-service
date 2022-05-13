@@ -61,6 +61,9 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_id"></a> [id](#output\_id) | The ID of the App Service Plan component. |
+| <a name="output_custom_domain_verification_id"></a> [custom\_domain\_verification\_id](#output\_custom\_domain\_verification\_id) | An identifier used by App Service to perform domain ownership verification via DNS TXT record. |
+| <a name="output_default_site_hostname"></a> [default\_site\_hostname](#output\_default\_site\_hostname) | The Default Hostname associated with the App Service Slot. |
+| <a name="output_id"></a> [id](#output\_id) | The ID of the App Service Slot |
 | <a name="output_maximum_number_of_workers"></a> [maximum\_number\_of\_workers](#output\_maximum\_number\_of\_workers) | The maximum number of workers supported with the App Service Plan's sku. |
+| <a name="output_outbound_ip_address_list"></a> [outbound\_ip\_address\_list](#output\_outbound\_ip\_address\_list) | A list of outbound IP addresses. |
 <!-- END_TF_DOCS -->
