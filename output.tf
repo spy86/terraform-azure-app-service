@@ -30,11 +30,11 @@ output "outbound_ip_address_list" {
 }
 output "id_app_service_slot" {
   description = "The ID of the App Service Slot"
-  value = "${azurerm_app_service_slot.main.id}"
+  value = "${azurerm_app_service_slot.main[count.index].id}"
   sensitive = false
 }
 output "default_site_hostname_pp_service_slot" {
   description = "The Default Hostname associated with the App Service Slot."
-  value = "${azurerm_app_service_slot.main.default_site_hostname}"
+  value = "${azurerm_app_service_slot.main[count.index].default_site_hostname}"
   sensitive = false
 }
