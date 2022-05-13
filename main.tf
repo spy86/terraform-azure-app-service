@@ -1,8 +1,5 @@
-provider "azurem" {}
+data "azurerm_client_config" "current" {}
 
-data "azurem_client_config" "current" {}
-
-resource "azurem_resource_group" "rg" {
-  location = "${var.rg_location}"
-  name = "${var.rg_name}"
+data "azurerm_resource_group" "rg" {
+  name     = "${var.resource_group_name}"
 }

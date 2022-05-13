@@ -1,5 +1,7 @@
-resource "azurerm_app_service" "main" {
-  name                = "${var.environment}-${var.app_service_name}-${var.region}-app"
+resource "azurerm_app_service_slot" "main" {
+  count               =  var.is_blue_green_deployment_enabled ? 1 : 0
+  name                = "app-rc"
+  app_service_name    = "${azurerm_app_service.main.name}"
   location            = "${data.azurerm_resource_group.rg.location}"
   resource_group_name = "${data.azurerm_resource_group.rg.name}"
   app_service_plan_id = "${azurerm_app_service_plan.main.id}"
@@ -42,10 +44,10 @@ resource "azurerm_app_service" "main" {
     }
   }
 
+  # will deploy image above once, then ignore for future deployments
   lifecycle {
     ignore_changes = [
       site_config.0.linux_fx_version
     ]
   }
 }
-
